@@ -1,0 +1,26 @@
+# systemd unit for the Valorant Hub bot
+# Install: sudo cp deploy/valorant-hub-bot.service /etc/systemd/system/
+#          sudo systemctl daemon-reload && sudo systemctl enable --now valorant-hub-bot
+[Unit]
+Description=Valorant Hub Discord bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=valbot
+Group=valbot
+WorkingDirectory=/opt/valorant-hub/bot
+EnvironmentFile=/opt/valorant-hub/bot/.env
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/valorant-hub/website/data
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="vh-title-key" content="meta.title">
+  <title>Valorant Hub — The Valorant community platform for Discord</title>
+  <meta name="description" content="Scrims, parties, duels, seasons, tournaments and rank roles for Discord. Premium is free for everyone right now.">
+  <meta property="og:title" content="Valorant Hub">
+  <meta property="og:description" content="Valorant community bot for Discord.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="theme-color" content="#0b0e14">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./" aria-label="Valorant Hub home">
+        <img class="brand-mark" src="assets/img/favicon.svg" alt="">
+        <span>VALORANT <b>HUB</b></span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="/p" data-i18n="nav.players">Players</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#panels" data-i18n="nav.panels">Panels</a>
+        <a href="#premium" data-i18n="nav.premium">Premium</a>
+        <a href="commands.html" data-i18n="nav.commands">Commands</a>
+        <a href="docs.html" data-i18n="nav.docs">Docs</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+        </div>
+        <a class="btn btn-ghost btn-sm btn-hide-sm" href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a class="btn btn-primary btn-sm btn-hide-sm" href="#" data-invite data-i18n="nav.add">Add to Discord</a>
+        <button class="nav-burger" type="button" aria-controls="nav-links" aria-expanded="false">
+          <span class="sr-only" data-i18n="nav.menu">Menu</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=80"
+             srcset="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=75 900w,
+                     https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=78 1400w,
+                     https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=80 2000w"
+             sizes="100vw" alt="A player in a gaming chair in front of a glowing PC setup" fetchpriority="high">
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 data-i18n-html="hero.title">Run your <span class="hl">Valorant community</span> inside Discord.</h1>
+          <p class="lead" data-i18n="hero.lead">Scrims, party finder, 1v1 duels, seasons, tournaments and live rank roles. Driven by real match data, controlled from panels and slash commands.</p>
+          <div class="hero-cta">
+            <a class="btn btn-discord" href="#" data-invite>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.4C.6 9 0 13.6.3 18.1a19.8 19.8 0 0 0 6 3l1.3-2a12.8 12.8 0 0 1-2-1l.5-.4a14 14 0 0 0 11.8 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.7 19.7 0 0 0 6-3c.4-5.2-.7-9.8-3.4-13.7ZM8.5 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>
+              <span data-i18n="hero.add">Add to Discord</span>
+            </a>
+            <a class="btn btn-ghost" href="dashboard.html" data-i18n="hero.dashboard">Open dashboard</a>
+          </div>
+          <div class="hero-meta">
+            <span class="chip" id="server-count-chip" hidden><span class="live-dot"></span><span data-i18n="hero.chip.servers">Servers:</span> <strong id="server-count"></strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Live lookup ===== -->
+    <section class="section" id="lookup">
+      <div class="container lookup-wrap">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:0">
+            <span class="kicker" data-i18n="lookup.kicker">Live rank lookup</span>
+            <h2 data-i18n="lookup.title">Check any rank. Real data, right now.</h2>
+          </div>
+          <form class="lookup-form" id="lookup-form" novalidate>
+            <div class="field">
+              <label for="riot-id" data-i18n="lookup.riotid">Riot ID</label>
+              <input class="input" id="riot-id" name="riotId" autocomplete="off" maxlength="22" required data-i18n-attr="placeholder:lookup.riotid.ph" placeholder="Name#TAG">
+            </div>
+            <div class="field">
+              <label for="region" data-i18n="lookup.region">Region</label>
+              <select class="select" id="region" name="region">
+                <option value="kr">KR</option>
+                <option value="ap">AP</option>
+                <option value="na">NA</option>
+                <option value="eu">EU</option>
+                <option value="latam">LATAM</option>
+                <option value="br">BR</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit" id="lookup-btn" data-i18n="lookup.go">Look up</button>
+          </form>
+        </div>
+        <div class="card lookup-result reveal" id="lookup-result" aria-live="polite">
+          <div class="result-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="2"/></svg>
+            <span data-i18n="lookup.empty">Enter a Riot ID to see its current rank.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="features.kicker">Community first</span>
+          <h2 data-i18n="features.title">Everything your server needs to play together</h2>
+        </div>
+
+        <div class="features">
+          <article class="feature wide reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1633545495735-25df17fb9f31?auto=format&fit=crop&w=1400&q=78" alt="A gaming room lined with PC desks and chairs">
+            <span class="tag-pill" data-i18n="f.scrims.tag">Scrim Board</span>
+            <h3 data-i18n="f.scrims.title">Scrims with balanced teams</h3>
+            <p data-i18n="f.scrims.text">1v1 to 5v5 custom matches. Teams are split by real tier and RR, with captains, voice rooms and confirmed results.</p>
+          </article>
+          <article class="feature wide reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1558008258-7ff8888b42b0?auto=format&fit=crop&w=1400&q=78" alt="A group of people playing online games together">
+            <span class="tag-pill" data-i18n="f.party.tag">Party Finder</span>
+            <h3 data-i18n="f.party.title">Find a squad in seconds</h3>
+            <p data-i18n="f.party.text">Post a party with mode, tier range and mic rules. Members join with one button; voice opens automatically.</p>
+          </article>
+          <article class="feature reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1780766382547-a0ffa16bd32d?auto=format&fit=crop&w=1000&q=78" alt="A dark arena filled with a crowd and bright stage lights">
+            <span class="tag-pill" data-i18n="f.tourn.tag">Tournaments</span>
+            <h3 data-i18n="f.tourn.title">Brackets your server will remember</h3>
+            <p data-i18n="f.tourn.text">Single, double elimination, round robin and groups. Results, disputes, staff approval and a public bracket page.</p>
+          </article>
+          <article class="feature reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1758410473735-c76baff30a79?auto=format&fit=crop&w=1000&q=78" alt="People playing video games in a dimly lit room">
+            <span class="tag-pill" data-i18n="f.duel.tag">Duel Arena</span>
+            <h3 data-i18n="f.duel.title">1v1 duels with their own rating</h3>
+            <p data-i18n="f.duel.text">Challenge anyone. Best of 3 or 5, random agent or map, Elo-based Duel Rating and a monthly champion.</p>
+          </article>
+          <article class="feature reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1783979384797-7a5d2ad23fc8?auto=format&fit=crop&w=1000&q=78" alt="A broadcast studio with purple lighting and large screens">
+            <span class="tag-pill" data-i18n="f.season.tag">Seasons</span>
+            <h3 data-i18n="f.season.title">Seasons and leaderboards</h3>
+            <p data-i18n="f.season.text">RR gain since season start, wins, ACS. Reward roles for the top places, unlimited seasons.</p>
+          </article>
+        </div>
+
+        <div class="mini-features">
+          <div class="mini reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h4 data-i18n="m.roles.title">Auto tier roles</h4>
+            <p data-i18n="m.roles.text">Iron to Radiant roles that update themselves after every rank change, with a full change log.</p>
+          </div>
+          <div class="mini reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+            <h4 data-i18n="m.alerts.title">Rank alerts</h4>
+            <p data-i18n="m.alerts.text">Rank ups, streaks and match results posted as clean cards, with cooldowns and quiet hours.</p>
+          </div>
+          <div class="mini reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+            <h4 data-i18n="m.analytics.title">Honest analytics</h4>
+            <p data-i18n="m.analytics.text">Win rate, K/D, ACS, ADR and HS% from stored real matches, always shown with the sample size.</p>
+          </div>
+          <div class="mini reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.4 0 4 1.6 4.5 4"/></svg></div>
+            <h4 data-i18n="m.clubs.title">Clubs</h4>
+            <p data-i18n="m.clubs.text">Small teams inside your server, with their own rankings and club scrims.</p>
+          </div>
+          <div class="mini reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+            <h4 data-i18n="m.recap.title">Weekly Recap</h4>
+            <p data-i18n="m.recap.text">Every Sunday: the real week in review. Top climbs, MVP and scrim highlights.</p>
+          </div>
+          <div class="mini reveal">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17c.6-1.8 2-3 3.5-3s2.9 1.2 3.5 3M15 10h3M15 14h3"/></svg></div>
+            <h4 data-i18n="m.passport.title">Player Passport</h4>
+            <p data-i18n="m.passport.text">An opt-in public profile that follows a player across every server.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Panels ===== -->
+    <section class="section" id="panels">
+      <div class="container panels-wrap">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:0">
+            <span class="kicker" data-i18n="panels.kicker">Panels + /commands</span>
+            <h2 data-i18n="panels.title">Click a panel or type a command. Same result.</h2>
+            <p data-i18n="panels.lead">Admins post persistent panels once. Members use buttons and menus; power users type slash commands. Both run the same action.</p>
+          </div>
+          <ul class="points">
+            <li><span class="n">01</span><div><h4 data-i18n="panels.p1.title">One click</h4><p data-i18n="panels.p1.text">Join, leave, balance and report with buttons.</p></div></li>
+            <li><span class="n">02</span><div><h4 data-i18n="panels.p2.title">Persistent and live</h4><p data-i18n="panels.p2.text">Panels survive bot restarts and edit themselves in place when something changes.</p></div></li>
+            <li><span class="n">03</span><div><h4 data-i18n="panels.p3.title">Private where it matters</h4><p data-i18n="panels.p3.text">Your profile and analysis open only for you, so channels stay clean.</p></div></li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="discord-window" aria-label="Discord panel preview">
+            <div class="dw-bar">
+              <span class="hash">#</span><span id="pv-channel">scrims</span>
+              <div class="dw-tabs" role="tablist">
+                <button type="button" role="tab" aria-selected="true" data-pv="scrim" data-i18n="panels.tab.scrim">Scrim</button>
+                <button type="button" role="tab" aria-selected="false" data-pv="hub" data-i18n="panels.tab.hub">Hub</button>
+                <button type="button" role="tab" aria-selected="false" data-pv="party" data-i18n="panels.tab.party">Party</button>
+              </div>
+            </div>
+            <div class="dw-body">
+              <div class="msg">
+                <div class="avatar"><img src="assets/img/favicon.svg" alt="" width="26" height="26"></div>
+                <div>
+                  <div class="msg-head"><span class="name">Valorant Hub</span><span class="app-badge">APP</span><span class="cmd" id="pv-used"></span></div>
+
+                  <!-- Scrim panel -->
+                  <div class="cv2" data-pv-panel="scrim">
+                    <h5 data-i18n="pv.scrim.title">5v5 Scrim</h5>
+                    <div class="sub" data-i18n="pv.scrim.sub">Open · Map: Random</div>
+                    <hr>
+                    <div class="team"><b data-i18n="pv.scrim.teamA">Joined · 0/10</b><div class="slot"><span data-i18n="pv.scrim.open">Open slot</span><br><span data-i18n="pv.scrim.open">Open slot</span><br><span data-i18n="pv.scrim.open">Open slot</span></div></div>
+                    <hr>
+                    <div class="dbtns">
+                      <span class="dbtn green" data-i18n="pv.btn.join">Join</span>
+                      <span class="dbtn" data-i18n="pv.btn.leave">Leave</span>
+                      <span class="dbtn blurple" data-i18n="pv.btn.balance">Balance teams</span>
+                      <span class="dbtn" data-i18n="pv.btn.voice">Random teams</span>
+                    </div>
+                  </div>
+
+                  <!-- Hub panel -->
+                  <div class="cv2" data-pv-panel="hub" hidden style="border-left-color: var(--teal)">
+                    <div class="section-row">
+                      <div>
+                        <h5 data-i18n="pv.hub.title">Valorant Hub</h5>
+                        <div class="sub" data-i18n="pv.hub.sub">Link your Riot ID once, then use everything from here.</div>
+                      </div>
+                      <div class="thumb"><img src="assets/img/favicon.svg" alt="" width="30" height="30"></div>
+                    </div>
+                    <hr>
+                    <div class="dbtns">
+                      <span class="dbtn green" data-i18n="pv.btn.register">Link Riot ID</span>
+                      <span class="dbtn blurple" data-i18n="pv.btn.profile">My profile</span>
+                      <span class="dbtn" data-i18n="pv.btn.leaderboard">Leaderboard</span>
+                      <span class="dbtn" data-i18n="pv.btn.help">Help</span>
+                    </div>
+                  </div>
+
+                  <!-- Party panel -->
+                  <div class="cv2" data-pv-panel="party" hidden style="border-left-color: #5865f2">
+                    <h5 data-i18n="pv.party.title">Competitive party</h5>
+                    <div class="sub" data-i18n="pv.party.sub">Created from the Party Finder panel</div>
+                    <hr>
+                    <div class="row2" style="grid-template-columns:repeat(3,1fr)">
+                      <div class="team"><b data-i18n="pv.party.f1">Mode</b><div class="slot" data-i18n="pv.party.f1v">Competitive</div></div>
+                      <div class="team"><b data-i18n="pv.party.f2">Tier range</b><div class="slot" data-i18n="pv.party.f2v">Set by the host</div></div>
+                      <div class="team"><b data-i18n="pv.party.f3">Mic</b><div class="slot" data-i18n="pv.party.f3v">Required</div></div>
+                    </div>
+                    <hr>
+                    <div class="dbtns">
+                      <span class="dbtn green" data-i18n="pv.btn.joinparty">Join party</span>
+                      <span class="dbtn" data-i18n="pv.btn.details">Details</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cmd-line"><span id="pv-cmdline"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section class="section section-alt" id="premium">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="kicker" data-i18n="premium.kicker">Pricing</span>
+          <h2 data-i18n="premium.title">Premium is free for everyone right now.</h2>
+          <p data-i18n="premium.text">Two plans. Every server gets Premium today.</p>
+        </div>
+        <div class="plans reveal">
+          <div class="plan">
+            <h3 data-i18n="plan.free">Free</h3>
+            <div class="plan-price" data-i18n="plan.free.price">0</div>
+            <ul class="plan-list" id="plan-free"></ul>
+          </div>
+          <div class="plan plan-hl">
+            <span class="plan-badge" data-i18n="premium.badge">Everyone has this now</span>
+            <h3 data-i18n="plan.premium">Premium</h3>
+            <div class="plan-price" data-i18n="plan.premium.price">Free now</div>
+            <ul class="plan-list" id="plan-premium"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Steps ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="kicker" data-i18n="steps.kicker">Setup</span>
+          <h2 data-i18n="steps.title">Live in three steps</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h4 data-i18n="steps.s1.title">Add the bot</h4><p data-i18n="steps.s1.text">Invite Valorant Hub with the button above.</p></div>
+          <div class="step reveal"><h4 data-i18n="steps.s2.title">Run /setup</h4><p data-i18n="steps.s2.text">Pick channels, map tier roles and switch features on.</p></div>
+          <div class="step reveal"><h4 data-i18n="steps.s3.title">Post your panels</h4><p data-i18n="steps.s3.text">Hub, Leaderboard, Scrim Board, Party Finder and more.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Commands preview ===== -->
+    <section class="section section-alt" id="commands">
+      <div class="container">
+        <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;max-width:none;flex-wrap:wrap">
+          <div>
+            <span class="kicker" data-i18n="cmds.kicker">Commands</span>
+            <h2 data-i18n="cmds.title" style="margin-bottom:0">Every panel has a command</h2>
+          </div>
+          <a class="btn btn-ghost" href="commands.html" data-i18n="cmds.all">See all commands</a>
+        </div>
+        <div class="cmd-groups" id="cmd-groups"></div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="kicker" data-i18n="faq.kicker">FAQ</span>
+          <h2 data-i18n="faq.title">Questions</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary data-i18n="faq.q1"></summary><p data-i18n="faq.a1"></p></details>
+          <details><summary data-i18n="faq.q2"></summary><p data-i18n="faq.a2"></p></details>
+          <details><summary data-i18n="faq.q3"></summary><p data-i18n="faq.a3"></p></details>
+          <details><summary data-i18n="faq.q4"></summary><p data-i18n="faq.a4"></p></details>
+          <details><summary data-i18n="faq.q5"></summary><p data-i18n="faq.a5"></p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1761774805261-f6174d599dcc?auto=format&fit=crop&w=2000&q=78" alt="A crowd cheering under blurred stage lights">
+      <div class="container reveal">
+        <h2 data-i18n="cta.title">Bring your server to life.</h2>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#" data-invite data-i18n="nav.add">Add to Discord</a>
+          <a class="btn btn-ghost" href="dashboard.html" data-i18n="hero.dashboard">Open dashboard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="./"><img class="brand-mark" src="assets/img/favicon.svg" alt=""><span>VALORANT <b>HUB</b></span></a>
+          <p data-i18n="foot.tagline" style="margin:14px 0 0">The Valorant community platform for Discord.</p>
+        </div>
+        <div>
+          <h5 data-i18n="foot.product">Product</h5>
+          <ul>
+            <li><a href="#features" data-i18n="nav.features">Features</a></li>
+            <li><a href="#premium" data-i18n="nav.premium">Pricing</a></li>
+            <li><a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="foot.resources">Resources</h5>
+          <ul>
+            <li><a href="commands.html" data-i18n="nav.commands">Commands</a></li>
+            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="credits">
+        <p data-i18n="foot.disclaimer"></p>
+        <p>
+          <span data-i18n="foot.photos">Photos</span>:
+          <a href="https://unsplash.com/photos/person-sitting-on-gaming-chair-while-playing-video-game-Mf23RF8xArY" target="_blank" rel="noopener">Florian Olivo</a>,
+          <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-computer-desks-and-chairs-GVbd5btrqeA" target="_blank" rel="noopener">ELLA DON</a>,
+          <a href="https://unsplash.com/photos/group-of-people-playing-online-games-ryRU-cd1yas" target="_blank" rel="noopener">Stem List</a>,
+          <a href="https://unsplash.com/photos/A-dark-stadium-filled-with-a-crowd-and-bright-lights-LltQTIsNbT8" target="_blank" rel="noopener">lesha tuman</a>,
+          <a href="https://unsplash.com/photos/people-playing-video-games-in-a-dimly-lit-room-f69QNI9zulg" target="_blank" rel="noopener">Raman Shaunia</a>,
+          <a href="https://unsplash.com/photos/modern-television-studio-with-purple-lighting-and-large-screens-yjlTDZdsvak" target="_blank" rel="noopener">Danny Pérez</a>,
+          <a href="https://unsplash.com/photos/crowd-cheering-at-a-concert-with-blurred-lights-E3Tns2qzUQo" target="_blank" rel="noopener">Alexandros Giannakakis</a>
+          <span data-i18n="foot.on">on</span> <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.
+        </p>
+        <p>&copy; <span data-year></span> Valorant Hub</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/commands-data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>

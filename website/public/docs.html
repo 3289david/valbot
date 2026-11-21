@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="vh-title-key" content="docs.title">
+  <title>Docs — Valorant Hub</title>
+  <meta name="description" content="How to use Valorant Hub: setup, profiles, leaderboards, seasons, tier roles, scrims, parties, duels, clubs, tournaments and plans.">
+  <meta name="theme-color" content="#0b0e14">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./" aria-label="Valorant Hub home">
+        <img class="brand-mark" src="assets/img/favicon.svg" alt="">
+        <span>VALORANT <b>HUB</b></span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="/p" data-i18n="nav.players">Player search</a>
+        <a href="./#features" data-i18n="nav.features">Features</a>
+        <a href="./#premium" data-i18n="nav.premium">Pricing</a>
+        <a href="commands.html" data-i18n="nav.commands">Commands</a>
+        <a href="docs.html" data-i18n="nav.docs" aria-current="page">Docs</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+        </div>
+        <a class="btn btn-ghost btn-sm btn-hide-sm" href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a class="btn btn-primary btn-sm btn-hide-sm" href="#" data-invite data-i18n="nav.add">Add to Discord</a>
+        <button class="nav-burger" type="button" aria-controls="nav-links" aria-expanded="false">
+          <span class="sr-only" data-i18n="nav.menu">Menu</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero docs-hero">
+    <img src="https://images.unsplash.com/photo-1636489953081-c4ebbd50fa3a?auto=format&fit=crop&w=2000&q=78" alt="A gaming desk with a monitor, keyboard and mouse">
+    <div class="container">
+      <span class="kicker" data-i18n="docs.kicker">Guide</span>
+      <h1 data-i18n="docs.h1">Valorant Hub Docs</h1>
+      <p data-i18n="docs.lead">Everything you can do, step by step.</p>
+      <div class="docs-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input class="input" id="docs-q" type="search" autocomplete="off" data-i18n-attr="placeholder:docs.search;aria-label:docs.search" placeholder="Search the docs">
+      </div>
+    </div>
+  </section>
+
+  <div class="container docs-layout">
+    <aside class="docs-side" id="docs-side" aria-label="Docs navigation"></aside>
+    <main class="docs-main" id="docs-main"></main>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="credits" style="border-top:0;margin-top:0;padding-top:0">
+        <p data-i18n="foot.disclaimer"></p>
+        <p><span data-i18n="foot.photos">Photos</span>: <a href="https://unsplash.com/photos/a-computer-desk-with-a-monitor-keyboard-and-mouse-JomkRNkzKhE" target="_blank" rel="noopener">ELLA DON</a> <span data-i18n="foot.on">on</span> <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</p>
+        <p>&copy; <span data-year></span> Valorant Hub</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script>
+    window.VH.addStrings({
+      en: { 'docs.title': 'Docs — Valorant Hub', 'docs.kicker': 'Guide', 'docs.h1': 'Valorant Hub Docs', 'docs.lead': 'Everything you can do, step by step.', 'docs.search': 'Search the docs', 'docs.none': 'No results.', 'docs.prev': 'Previous', 'docs.next': 'Next', 'docs.top': 'Back to top', 'docs.results': '{n} results' },
+      ko: { 'docs.title': '가이드 — Valorant Hub', 'docs.kicker': '가이드', 'docs.h1': 'Valorant Hub 가이드', 'docs.lead': '모든 기능을 단계별로 안내합니다.', 'docs.search': '가이드 검색', 'docs.none': '결과가 없습니다.', 'docs.prev': '이전', 'docs.next': '다음', 'docs.top': '맨 위로', 'docs.results': '{n}개 결과' },
+    });
+  </script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/docs-content.js"></script>
+  <script src="assets/js/docs.js"></script>
+</body>
+</html>

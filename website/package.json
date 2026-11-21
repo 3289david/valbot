@@ -1,0 +1,19 @@
+{
+  "name": "valorant-hub-website",
+  "version": "1.0.0",
+  "description": "Landing page, commands page and admin dashboard for the Valorant Hub Discord bot",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  }
+}

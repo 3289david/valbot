@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="vh-title-key" content="commands.title">
+  <title>Commands — Valorant Hub</title>
+  <meta name="theme-color" content="#0b0e14">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./" aria-label="Valorant Hub home">
+        <img class="brand-mark" src="assets/img/favicon.svg" alt="">
+        <span>VALORANT <b>HUB</b></span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="/p" data-i18n="nav.players">Player search</a>
+        <a href="./#features" data-i18n="nav.features">Features</a>
+        <a href="./#panels" data-i18n="nav.panels">Panels</a>
+        <a href="./#premium" data-i18n="nav.premium">Pricing</a>
+        <a href="commands.html" data-i18n="nav.commands" aria-current="page">Commands</a>
+        <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+        </div>
+        <a class="btn btn-ghost btn-sm btn-hide-sm" href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a class="btn btn-primary btn-sm btn-hide-sm" href="#" data-invite data-i18n="nav.add">Add to Discord</a>
+        <button class="nav-burger" type="button" aria-controls="nav-links" aria-expanded="false">
+          <span class="sr-only" data-i18n="nav.menu">Menu</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img src="https://images.unsplash.com/photo-1636036824578-d0d300a4effb?auto=format&fit=crop&w=2000&q=78" alt="A gaming keyboard on a desk">
+      <div class="container">
+        <span class="kicker" data-i18n="panels.kicker">Panels + commands</span>
+        <h1 data-i18n="commands.title">Commands</h1>
+        <p data-i18n="commands.lead">Every slash command, and the panel that does the same thing.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:40px">
+      <div class="container">
+        <div class="cmd-search">
+          <label class="sr-only" for="cmd-q" data-i18n="commands.search">Search commands</label>
+          <input class="input" id="cmd-q" type="search" data-i18n-attr="placeholder:commands.search" placeholder="Search commands">
+          <div class="filter-pills" id="cmd-filters"></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="commands.col.cmd">Command</th>
+                <th data-i18n="commands.col.group">Group</th>
+                <th data-i18n="commands.col.desc">What it does</th>
+                <th data-i18n="commands.col.panel">Panel</th>
+              </tr>
+            </thead>
+            <tbody id="cmd-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="credits" style="border-top:0;margin-top:0;padding-top:0">
+        <p data-i18n="foot.disclaimer"></p>
+        <p><span data-i18n="foot.photos">Photos</span>: <a href="https://unsplash.com/photos/a-computer-keyboard-sitting-on-top-of-a-desk-gETE8IyZPrM" target="_blank" rel="noopener">ELLA DON</a> <span data-i18n="foot.on">on</span> <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</p>
+        <p>&copy; <span data-year></span> Valorant Hub</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/commands-data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script>
+    (function () {
+      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const groups = [...new Set(window.VH_COMMANDS.map((c) => c.group))];
+      let group = 'all';
+      let q = '';
+
+      function renderFilters() {
+        const all = [{ id: 'all', label: window.VH.t('commands.all') }].concat(groups.map((g) => ({ id: g, label: g })));
+        document.getElementById('cmd-filters').innerHTML = all
+          .map((g) => `<button type="button" class="pill" data-g="${esc(g.id)}" aria-pressed="${g.id === group}">${esc(g.label)}</button>`)
+          .join('');
+      }
+
+      function render() {
+        const lang = window.VH.lang;
+        const rows = window.VH_COMMANDS.filter((c) => {
+          if (group !== 'all' && c.group !== group) return false;
+          if (!q) return true;
+          return (c.cmd + ' ' + c.en + ' ' + c.ko + ' ' + c.panel).toLowerCase().includes(q);
+        });
+        document.getElementById('cmd-rows').innerHTML = rows.length
+          ? rows.map((c) => `<tr><td><code>${esc(c.cmd)}</code></td><td><span class="grp">${esc(c.group)}</span></td><td>${esc(lang === 'ko' ? c.ko : c.en)}</td><td class="panel-name">${esc(c.panel)}</td></tr>`).join('')
+          : `<tr><td colspan="4" style="color:var(--text-3)">${esc(window.VH.t('commands.none'))}</td></tr>`;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        renderFilters();
+        render();
+        document.getElementById('cmd-q').addEventListener('input', (e) => { q = e.target.value.trim().toLowerCase(); render(); });
+        document.getElementById('cmd-filters').addEventListener('click', (e) => {
+          const b = e.target.closest('[data-g]');
+          if (!b) return;
+          group = b.dataset.g;
+          renderFilters();
+          render();
+        });
+      });
+      window.VH.onLang(() => { renderFilters(); render(); });
+    })();
+  </script>
+</body>
+</html>

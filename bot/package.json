@@ -1,0 +1,19 @@
+{
+  "name": "valorant-hub-bot",
+  "version": "1.0.0",
+  "description": "Valorant Hub Discord bot: panels + slash commands on Components V2, driven by real HenrikDev data",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy-commands": "node src/deploy-commands.js",
+    "test": "node test/run.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "discord.js": "^14.28.1",
+    "dotenv": "^16.6.1"
+  }
+}
